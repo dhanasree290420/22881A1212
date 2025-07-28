@@ -1,12 +1,12 @@
-🧩 Design Document
+Design Document
 Project Title: Frontend Test Submission
 Author: G. Dhanasree
 Roll No: 22881A1212
 
-1. 📌 Objective
+1.Objective
 Build a responsive React-based frontend application to demonstrate skills in component-based architecture, logging, and client-side data persistence.
 
-2. 🧱 Architectural Design Choices
+2.Architectural Design Choices
 Component-Based Architecture:
 The app is broken into reusable components such as Navbar, ClientList, AddClientForm, and ClientCard.
 
@@ -16,7 +16,7 @@ Uses React Router for client-side routing without reloading the page.
 Middleware for Logging:
 A custom logger.js is created to log all client interactions locally (console or file-based) to demonstrate middleware understanding.
 
-3. ⚙️ Technology Stack
+3.Technology Stack
 Tool	Reason
 React	UI building using components and state management.
 Vite	Fast build tool and dev server for React.
@@ -25,7 +25,7 @@ LocalStorage	To persist client data without backend API.
 JavaScript (ES6+)	For logic, event handling, and structure.
 HTML/CSS	For layout and responsive design.
 
-4. 🗃️ Data Modeling & State Management
+4.Data Modeling & State Management
 All client data is stored in localStorage in this format:
 
 json
@@ -40,3 +40,58 @@ Copy code
     }
   ]
 }
+State Management is handled via useState and useEffect.
+
+Persistence via window.localStorage.setItem() and getItem() during app load.
+
+5.Routing Strategy
+Route	Component	Purpose
+/	Home	Landing page or dashboard
+/clients	ClientList	Display all clients
+/add-client	AddClientForm	Form to add new client
+
+Implemented using react-router-dom and BrowserRouter.
+
+6.Logging Strategy
+Created logger.js inside Logging Middleware/.
+
+Every form submission and data change logs a timestamped message:
+
+js
+Copy
+Edit
+logger("New client added: John Doe at 2025-07-28 10:23 AM");
+7.Assumptions
+Backend is not implemented, so all data is stored locally.
+
+App will run on modern browsers that support localStorage.
+
+Focus is only on frontend performance and architecture.
+
+The folder name with spaces like Frontend Test Submission will be handled with quotes in terminal commands (cd "Frontend Test Submission").
+
+8.Testing Approach
+Manual testing of components.
+
+Validate input fields and confirm persistence.
+
+Tested AddClient, ClientList, routing, and reload behavior.
+
+9.File Structure Overview
+bash
+Copy
+Edit
+Frontend Test Submission/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── AddClientForm.jsx
+│   │   └── ClientList.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── utils/
+│       └── logger.js
+├── vite.config.js
+├── package.json
+└── README.md
