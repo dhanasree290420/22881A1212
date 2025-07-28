@@ -1,0 +1,42 @@
+🧩 Design Document
+Project Title: Frontend Test Submission
+Author: G. Dhanasree
+Roll No: 22881A1212
+
+1. 📌 Objective
+Build a responsive React-based frontend application to demonstrate skills in component-based architecture, logging, and client-side data persistence.
+
+2. 🧱 Architectural Design Choices
+Component-Based Architecture:
+The app is broken into reusable components such as Navbar, ClientList, AddClientForm, and ClientCard.
+
+Single Page Application (SPA):
+Uses React Router for client-side routing without reloading the page.
+
+Middleware for Logging:
+A custom logger.js is created to log all client interactions locally (console or file-based) to demonstrate middleware understanding.
+
+3. ⚙️ Technology Stack
+Tool	Reason
+React	UI building using components and state management.
+Vite	Fast build tool and dev server for React.
+React Router	For page navigation (SPA behavior).
+LocalStorage	To persist client data without backend API.
+JavaScript (ES6+)	For logic, event handling, and structure.
+HTML/CSS	For layout and responsive design.
+
+4. 🗃️ Data Modeling & State Management
+All client data is stored in localStorage in this format:
+
+json
+Copy code
+{
+  "clients": [
+    {
+      "id": "c1",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "joinedDate": "2025-07-28"
+    }
+  ]
+}
